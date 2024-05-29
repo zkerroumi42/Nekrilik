@@ -2,6 +2,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using api.Dtos;
 using api.Interfaces;
+using api.Models;
+using api.Repositories;
 
 namespace api.Controllers
 {
@@ -26,6 +28,18 @@ namespace api.Controllers
 
             var review = await _reviewRepository.CreateReviewAsync(createReviewDto);
             return Ok(review);
+        }
+
+        [HttpGet("getAll")]
+        public async Task<IActionResult> GetReviews()
+        {
+            var reviews = await _reviewRepository.GetReviewsAsync();
+            if (reviews == null || reviews.Count == 0)
+            {
+                return NotFound("No reviews found.");
+            }
+
+            return Ok(reviews);
         }
     }
 }

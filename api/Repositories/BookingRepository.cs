@@ -36,7 +36,7 @@ namespace api.Repositories
             return booking;
         }
 
-        public async Task<List<Booking>> GetPropertiesAsync()
+        public async Task<List<Booking>> GetBookingsAsync()
         {
             return await _context.Bookings.Include(b => b.Client).Include(b => b.Property).ToListAsync();
         }
@@ -77,11 +77,6 @@ namespace api.Repositories
             _context.Bookings.Remove(booking);
             await _context.SaveChangesAsync();
             return true;
-        }
-
-        public Task<List<Booking>> GetBookingsAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }

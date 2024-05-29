@@ -7,5 +7,6 @@ namespace api.Interfaces
     public interface IReviewRepository
     {
         Task<Review> CreateReviewAsync(CreateReviewDto createReviewDto);
+        Task<List<Review>> GetReviewsAsync();
     }
 }

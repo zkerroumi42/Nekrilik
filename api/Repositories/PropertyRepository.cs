@@ -99,10 +99,5 @@ namespace api.Repositories
 
             return true;
         }
-
-        public Task<Property> CreateReviewAsync(CreatePropertyDto createPropertyDto)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

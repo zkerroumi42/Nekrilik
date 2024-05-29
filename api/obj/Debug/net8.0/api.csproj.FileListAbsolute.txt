@@ -532,3 +532,5 @@ C:\Users\KERROUMI\Downloads\AjiKri\api\obj\Debug\net8.0\refint\api.dll
 C:\Users\KERROUMI\Downloads\AjiKri\api\obj\Debug\net8.0\api.pdb
 C:\Users\KERROUMI\Downloads\AjiKri\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 C:\Users\KERROUMI\Downloads\AjiKri\api\obj\Debug\net8.0\ref\api.dll
+C:\Users\KERROUMI\Desktop\AjiKri\api\bin\Debug\net8.0\package-lock.json
+C:\Users\KERROUMI\Desktop\AjiKri\api\obj\Debug\net8.0\api.sourcelink.json

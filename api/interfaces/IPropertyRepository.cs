@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Dtos;
 using api.Model;
+using api.Models;
 
 namespace api.interfaces
 {
@@ -14,6 +15,7 @@ namespace api.interfaces
         Task<Property> GetPropertyByIdAsync(int id);
         Task<Property> UpdatePropertyAsync(CreatePropertyDto updatePropertyDto, int id);
         Task<bool> DeletePropertyAsync(int id);
+
         
     }
 }

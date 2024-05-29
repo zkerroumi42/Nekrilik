@@ -10021,11 +10021,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KERROUMI\\Downloads\\AjiKri\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\KERROUMI\\Desktop\\AjiKri\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\Users\\KERROUMI\\Downloads\\AjiKri\\api\\api.csproj",
+      "projectPath": "C:\\Users\\KERROUMI\\Desktop\\AjiKri\\api\\api.csproj",
       "packagesPath": "C:\\Users\\KERROUMI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KERROUMI\\Downloads\\AjiKri\\api\\obj\\",
+      "outputPath": "C:\\Users\\KERROUMI\\Desktop\\AjiKri\\api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

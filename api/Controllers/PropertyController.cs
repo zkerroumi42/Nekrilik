@@ -29,7 +29,7 @@ namespace api.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<IActionResult> GetPropertys()
+        public async Task<IActionResult> GetProperties()
         {
             List<Property> properties = await PropertyRepository.GetPropertiesAsync();
             if (properties == null)
@@ -63,8 +63,6 @@ namespace api.Controllers
                 return BadRequest("Something went wrong while deleting the Property.");
             return Ok("Property deleted successfully.");
         }
-        
-
 
     }
 }
