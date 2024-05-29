@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i1T2RD/h8+8=",
+  "dgSpecHash": "QtU/vcb9I2c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\KERROUMI\\Desktop\\AjiKri\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\KERROUMI\\Desktop\\Nekrilik\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KERROUMI\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\KERROUMI\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
@@ -189,5 +189,12 @@
     "C:\\Users\\KERROUMI\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\KERROUMI\\.nuget\\packages\\timezoneconverter\\3.3.0\\timezoneconverter.3.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }
