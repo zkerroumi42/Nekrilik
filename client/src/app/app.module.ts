@@ -20,6 +20,11 @@ import { PropertiesModule } from './properties/properties.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { AdminComponent } from './auth/admin/admin.component';
+import { OwnerComponent } from './auth/owner/owner.component';
+import { ClientComponent } from './auth/client/client.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { HeaderComponent } from './header/header.component';
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
+    LoginComponent,
+    RegisterComponent,
+    AdminComponent,
+    OwnerComponent,
+    ClientComponent,
 
   ],
   imports: [

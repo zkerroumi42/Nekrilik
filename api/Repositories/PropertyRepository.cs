@@ -27,7 +27,7 @@ namespace api.Repositories
                 Description = createPropertyDto.Description,
                 Address = createPropertyDto.Address,
                 Photo = createPropertyDto.Photo,
-                State = createPropertyDto.State,
+                // State = createPropertyDto.State,
                 ZipCode = createPropertyDto.ZipCode,
                 PropertyType = createPropertyDto.PropertyType,
                 RentalType = createPropertyDto.RentalType,
@@ -72,7 +72,7 @@ namespace api.Repositories
             property.Description = updatePropertyDto.Description;
             property.Address = updatePropertyDto.Address;
             property.Photo = updatePropertyDto.Photo;
-            property.State = updatePropertyDto.State;
+            // property.State = updatePropertyDto.State;
             property.ZipCode = updatePropertyDto.ZipCode;
             property.PropertyType = updatePropertyDto.PropertyType;
             property.RentalType = updatePropertyDto.RentalType;

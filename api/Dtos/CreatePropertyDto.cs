@@ -15,10 +15,10 @@ namespace api.Dtos
         public string Address { get; set; } = "";
         
         [Required]
-        public string Photo { get; set; } = "";
-        
-        [Required]
-        public string State { get; set; } = "";
+        // public IFormFile? Image { get; set; }
+        public string? Photo { get; set; }
+        // [Required]
+        // public string State { get; set; } = "";
         
         [Required]
         public string ZipCode { get; set; } = "";

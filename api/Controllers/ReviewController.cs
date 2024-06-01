@@ -18,7 +18,7 @@ namespace api.Controllers
             _reviewRepository = reviewRepository;
         }
 
-        [HttpPost("create-review")]
+        [HttpPost("Create")]
         public async Task<IActionResult> CreateReview([FromBody] CreateReviewDto createReviewDto)
         {
             if (createReviewDto == null)
