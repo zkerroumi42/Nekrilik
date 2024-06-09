@@ -22,9 +22,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { AdminComponent } from './auth/admin/admin.component';
-import { OwnerComponent } from './auth/owner/owner.component';
-import { ClientComponent } from './auth/client/client.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ListEmployerComponent } from './list-employer/list-employer.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +35,11 @@ import { ClientComponent } from './auth/client/client.component';
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
-    LoginComponent,
-    RegisterComponent,
-    AdminComponent,
-    OwnerComponent,
-    ClientComponent,
+    StatistiquesComponent,
+    ReviewsComponent,
+    ListEmployerComponent
+    
+    
 
   ],
   imports: [
@@ -47,17 +47,21 @@ import { ClientComponent } from './auth/client/client.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    RegisterComponent,
+    LoginComponent,
     PropertiesModule,
     MatTableModule,
     MatSortModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+
   ],
   providers: [
     provideAnimationsAsync()
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

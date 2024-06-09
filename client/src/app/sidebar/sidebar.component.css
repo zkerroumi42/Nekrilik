@@ -1,7 +1,7 @@
 aside {
     height: 100%;
     width: 200px;
-    background: #930ebb;
+    background: #343A40;
     border: 0.15px rgba(0, 0, 0, 0.144);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
@@ -46,6 +46,7 @@ aside {
     transition: 0.3s;
 }
 
+
 #label-check:checked+.hamburger-label .line1 {
     transform: rotate(35deg) scaleX(0.55) translate(22px, -4.5px);
     border-radius: 50px 50px 50px 0;
@@ -63,13 +64,22 @@ aside {
 }
 
 .nav-items {
-    color: #fff;
+    color: #969BA3;
     font-size: larger;
     cursor: pointer;
     position: relative;
 }
+.active-link {
+    background-color:#007BFF;
+    color: white; /* Makes the text more readable on a blue background */
+  }
+  
 
 .nav-items:hover {
-    color: #930ebb;
-    background-color: #fff;
+    color: #fff;
+    background-color: #007BFF;
+}
+.hb:hover{
+    background: #fff;
+    color: #000;
 }

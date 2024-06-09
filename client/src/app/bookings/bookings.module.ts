@@ -7,17 +7,20 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { PropertyComponent } from './booking/property.component';
 import { ListBookingsComponent } from './list-bookings/list-bookings.component';
+import { BookingComponent } from './booking/booking.component';
+import { CreateBookingComponent } from './create-booking/create-booking.component';
+import { UpdateBookingComponent } from './update-booking/update-booking.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [
 
-
-      { path: 'list', component: ListBookingsComponent },
-      { path: ':id', component: PropertyComponent },
+      { path: 'create', component: CreateBookingComponent },
+      { path: 'update/:id', component: UpdateBookingComponent },
+      { path: '', component: ListBookingsComponent },
+      { path: ':id', component: BookingComponent },
 
     ],
   },
@@ -25,10 +28,9 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [ListBookingsComponent,PropertyComponent],
+  declarations: [ListBookingsComponent, BookingComponent, CreateBookingComponent, UpdateBookingComponent,],
   imports: [
     CommonModule,
-    
     MatTableModule,
     MatSortModule,
     MatInputModule,
@@ -36,7 +38,6 @@ const routes: Routes = [
     MatButtonModule,
     FormsModule,
         RouterModule.forChild(routes),
-    
         
   ]
 })

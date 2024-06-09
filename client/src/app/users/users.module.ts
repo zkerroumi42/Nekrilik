@@ -10,12 +10,13 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 const routes: Routes = [
   {
     path: '',
     children: [
 
-      { path: 'create-user', component: CreateUserComponent },
+      { path: 'create', component: CreateUserComponent },
       { path: 'owners', component: ListOwnerComponent },
       { path: 'clients', component: ListClientsComponent },
 
@@ -29,7 +30,8 @@ const routes: Routes = [
   declarations: [
     ListOwnerComponent,
     ListClientsComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    UserDetailsComponent
   ],
   imports: [
     CommonModule,

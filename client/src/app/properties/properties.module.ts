@@ -9,14 +9,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { PropertyComponent } from './property/property.component';
-
+import { CreatePropertyComponent } from './create-property/create-property.component';
+import { UpdatePropertyComponent } from './update-property/update-property.component';
 const routes: Routes = [
   {
     path: '',
     children: [
 
-
-      { path: 'list', component: ListPropertiesComponent },
+      { path: 'create', component: CreatePropertyComponent },
+      { path: 'update/:id', component: UpdatePropertyComponent },
+      { path: '', component: ListPropertiesComponent },
       { path: ':id', component: PropertyComponent },
 
     ],
@@ -25,7 +27,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [ListPropertiesComponent,PropertyComponent],
+  declarations: [ListPropertiesComponent,PropertyComponent, CreatePropertyComponent, UpdatePropertyComponent,],
   imports: [
     CommonModule,
     

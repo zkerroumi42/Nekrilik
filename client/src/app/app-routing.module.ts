@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
 
 const routes: Routes = [
    {
         path: '',
         component: HomeComponent,
         pathMatch: 'full',
+    },
+    {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
     },
 
     {
@@ -23,9 +28,8 @@ const routes: Routes = [
       loadChildren: () => import('./bookings/bookings.module').then((m) => m.BookingsModule),
   },
   {
-      path: 'properties',
-      loadChildren: () => import('./properties/properties.module').then((m) => m.PropertiesModule),
-  },
+    path: 'statistiques',component:StatistiquesComponent
+},
     {path: '**', component:NotFoundComponent}
 ];
 

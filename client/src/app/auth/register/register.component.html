@@ -1,1 +1,16 @@
-<p>register works!</p>
+<div class="container h-100 d-flex align-items-center justify-content-center rejister">
+
+    <form class="form" (submit)="onsubmit()">
+        <span class="title">SIGN UP</span>
+        <div class="fullname">
+            <input type="text" id="username" [(ngModel)]="username" name="username" required="" class="input" placeholder="First Name">
+            <input type="text" id="username" [(ngModel)]="username" name="username" required="" class="input" placeholder="Last Name ">
+        </div>
+        <input type="text" id="username" [(ngModel)]="username" name="username" required="" class="input" placeholder="Username">
+        <!-- <input type="email" id="email" [(ngModel)]="email" name="email" required="" class="input" placeholder="Email"> -->
+        <input type="password" id="password" [(ngModel)]="password" name="password" required="" class="input" placeholder="Password">
+        <input type="password" id="password" [(ngModel)]="password" name="password" required="" class="input" placeholder="Confirme Password">
+        <button type="submit" class="submit">Register</button>
+    </form>
+
+</div>
