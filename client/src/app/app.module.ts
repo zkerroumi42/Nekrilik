@@ -24,7 +24,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { ReviewsComponent } from './reviews/reviews.component';
-import { ListEmployerComponent } from './list-employer/list-employer.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { ListEmployerComponent } from './list-employer/list-employer.component';
     HeaderComponent,
     StatistiquesComponent,
     ReviewsComponent,
-    ListEmployerComponent
+    ProfileComponent,
     
     
 

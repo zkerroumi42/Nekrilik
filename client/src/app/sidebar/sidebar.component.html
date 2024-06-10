@@ -26,20 +26,23 @@
       @if (!isOpen) {<b> Tableau de Bord</b>}
     </span>
     <!-- users-->
-    <span class="mx-auto nav-items w-100 py-3 ps-3" (click)="toggleSubMenu()"  routerLink="/users"
+    <span class="mx-auto nav-items w-100  py-3 ps-3" (click)="toggleSubMenu()"  routerLink="/users"
     routerLinkActive="active-link">
       <i style="font-size: 27px" class="bi bi-people-fill"></i>
       @if (!isOpen) {<b> Utilisateurs</b>}
     </span>
     <div *ngIf="showSubMenu" class="d-flex flex-column ms-4 ">
       <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/users/owners/">
-        @if (!isOpen) {<b><i class="bi bi-person-plus-fill me-1"></i>add user</b>}
+        <i class="bi bi-person-plus-fill me-1"></i>
+        @if (!isOpen) {<b>add user</b>}
       </span>
       <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/users/owners/">
-        @if (!isOpen) {<b><i class="bi bi-list"></i> list owners</b>}
+        <i class="bi bi-list"></i>
+        @if (!isOpen) {<b> list owners</b>}
       </span>
       <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/users/clients/">
-        @if (!isOpen) {<b><i class="bi bi-list"></i>list clients</b>}
+        <i class="bi bi-list"></i>
+        @if (!isOpen) {<b>list clients</b>}
       </span>
     </div>
 <!-- properties -->
@@ -50,10 +53,12 @@
     </span>
     <div *ngIf="showSubMenu2" class="d-flex flex-column ms-4">
       <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/properties/create">
-        @if (!isOpen) {<b> <i class="bi bi-house-add me-1"></i>add property</b>}
+        <i class="bi bi-house-add me-1"></i>
+        @if (!isOpen) {<b>add property</b>}
       </span>
       <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/properties">
-        @if (!isOpen) {<b><i class="bi bi-list me-1"></i>list properties</b>}
+        <i class="bi bi-list me-1"></i>
+        @if (!isOpen) {<b>list properties</b>}
       </span>
     </div>
 <!-- bookings -->
@@ -64,15 +69,17 @@
     </span>
     <div *ngIf="showSubMenu3" class="d-flex flex-column ms-4">
       <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/bookings/create">
+        <i class="bi bi-building-fill-add"></i>
         @if (!isOpen) {<b> add booking</b>}
       </span>
       <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/bookings">
-        @if (!isOpen) {<b><i class="bi bi-list"></i>list-bookings</b>}
+        <i class="bi bi-list"></i>
+        @if (!isOpen) {<b>list-bookings</b>}
       </span>
     </div>
     <!--  profile-->
     <span
-    routerLink="/profile/{element.item}"
+    routerLink="/profile"
     routerLinkActive="active-link"
     class="mx-auto nav-items w-100 py-3 ps-3"
   >

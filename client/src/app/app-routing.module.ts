@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
    {
@@ -29,6 +30,9 @@ const routes: Routes = [
   },
   {
     path: 'statistiques',component:StatistiquesComponent
+},
+{
+    path: 'profile',component:ProfileComponent
 },
     {path: '**', component:NotFoundComponent}
 ];

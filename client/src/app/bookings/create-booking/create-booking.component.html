@@ -1,6 +1,61 @@
 <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="#">users</a>
-    <a class="breadcrumb-item" href="#">owners</a>
-    <span class="breadcrumb-item active" aria-current="page">create</span>
+    <a class="breadcrumb-item" href="#">Users</a>
+    <a class="breadcrumb-item" href="#">Bookings</a>
+    <span class="breadcrumb-item active" aria-current="page">Create</span>
 </nav>
-<p>create-booking works!</p>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2>Create New Booking</h2>
+        </div>
+    </div>
+    <form  class="needs-validation property-form" >
+        <div class="form-group">
+            <label for="startDate">Start Date:</label>
+            <input type="date" class="form-control" id="startDate"  required>
+            <div class="invalid-feedback">
+                Please provide a start date.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="endDate">End Date:</label>
+            <input type="date" class="form-control" id="endDate"  required>
+            <div class="invalid-feedback">
+                Please provide an end date.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="totalPrice">Total Price:</label>
+            <input type="number" class="form-control" id="totalPrice"  required>
+            <div class="invalid-feedback">
+                Please provide a total price.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bookingStatus">Booking Status:</label>
+            <select class="form-control" id="bookingStatus"  required>
+                <option *ngFor="let status of bookingStatuses" [value]="status">{{ status }}</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a booking status.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="appUserId">User ID:</label>
+            <input type="number" class="form-control" id="appUserId"  required>
+            <div class="invalid-feedback">
+                Please provide a user ID.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyId">Property ID:</label>
+            <input type="number" class="form-control" id="propertyId"  required>
+            <div class="invalid-feedback">
+                Please provide a property ID.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Booking</button>
+    </form>
+</div>

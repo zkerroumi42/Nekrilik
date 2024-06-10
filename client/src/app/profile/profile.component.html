@@ -1,0 +1,58 @@
+
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="#">admin</a>
+    <span class="breadcrumb-item active" aria-current="page">Profile</span>
+</nav>
+<div class="container profile-container">
+    <div class="row">
+        <div class="col-md-6 profile-section">
+            <h4>Mon profil</h4>
+            <div>
+                <img src="https://via.placeholder.com/100" alt="Profile Picture">
+            </div>
+            <br>
+            <input type="file" name="photo" id="photo">
+            <br>
+            <br>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="name" placeholder="Admin">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="admin@admin.com">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-danger btn-block">Enregistrer</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="password-section">
+                <h4>Changer le mot de passe</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="new-password">New Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="repeat-password">Repeat New Password <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="repeat-password">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-danger btn-block">Enregistrer</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 profile-section">
+            <div class="delete-section ">
+                <h4>Delete Compte</h4>
+                <hr>
+                <button class="btn btn-danger btn-block">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>

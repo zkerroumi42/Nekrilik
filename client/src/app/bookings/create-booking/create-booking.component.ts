@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrl: './create-booking.component.css'
 })
 export class CreateBookingComponent {
+  bookingStatuses: string[] = ['Pending', 'Confirmed', 'Cancelled'];
 
+  constructor() {
+    };
+  
+
+  ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    console.log("en submit");
+  }
 }
