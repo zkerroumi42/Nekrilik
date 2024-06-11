@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { PropertyComponent } from './property/property.component';
 import { CreatePropertyComponent } from './create-property/create-property.component';
 import { UpdatePropertyComponent } from './update-property/update-property.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 const routes: Routes = [
   {
     path: '',
@@ -37,6 +38,7 @@ const routes: Routes = [
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
+    MatPaginatorModule,
     ReactiveFormsModule ,
         RouterModule.forChild(routes),
     

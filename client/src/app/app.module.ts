@@ -25,6 +25,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ProfileComponent } from './profile/profile.component';
     MatFormFieldModule,
     MatButtonModule,
     MatIconModule,
+    MatPaginatorModule,
 
   ],
   providers: [

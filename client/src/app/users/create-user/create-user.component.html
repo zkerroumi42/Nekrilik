@@ -1,5 +1,59 @@
 <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="#">users</a>
-    <span class="breadcrumb-item active" aria-current="page">create</span>
-</nav>
-<p>create-user works!</p>
+    <a class="breadcrumb-item" href="#">Users</a>
+    <span class="breadcrumb-item active" aria-current="page">Create</span>
+  </nav>
+  
+  <div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2>Create New User</h2>
+        </div>
+    </div>
+    <form  (ngSubmit)="onSubmit()" class="needs-validation">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" formControlName="username" required>
+        <div class="invalid-feedback">
+          Please provide a username.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" formControlName="email" required>
+        <div class="invalid-feedback">
+          Please provide a valid email address.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" formControlName="password" required>
+        <div class="invalid-feedback">
+          Please provide a password (minimum 6 characters).
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName">
+      </div>
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <select class="form-control" id="role" formControlName="role">
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input type="date" class="form-control" id="endDate"  required>
+        <div class="invalid-feedback">
+            Please provide an end date.
+        </div>
+    </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Add User</button>
+    </form>
+  </div>
+  

@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminGuard } from '../gaurds/admin.guard';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 const routes: Routes = [
   {
     path: '',
@@ -14,6 +15,7 @@ const routes: Routes = [
 
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'password-reset', component: PasswordResetComponent },
       
     ],
   },
@@ -21,11 +23,13 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
+    FormData,
   ],
   providers: [AuthService, AdminGuard]
 })

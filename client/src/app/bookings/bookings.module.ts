@@ -11,6 +11,7 @@ import { ListBookingsComponent } from './list-bookings/list-bookings.component';
 import { BookingComponent } from './booking/booking.component';
 import { CreateBookingComponent } from './create-booking/create-booking.component';
 import { UpdateBookingComponent } from './update-booking/update-booking.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatPaginatorModule,
     FormsModule,
         RouterModule.forChild(routes),
         

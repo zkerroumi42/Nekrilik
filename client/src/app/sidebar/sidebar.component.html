@@ -22,58 +22,58 @@
       routerLinkActive="active-link"
       class="mx-auto nav-items w-100 py-3 ps-3"
     >
-      <i style="font-size: 27px" class="bi bi-speedometer2"></i>
+      <i style="font-size: 20px" class="bi bi-speedometer2 me-3"></i>
       @if (!isOpen) {<b> Tableau de Bord</b>}
     </span>
     <!-- users-->
-    <span class="mx-auto nav-items w-100  py-3 ps-3" (click)="toggleSubMenu()"  routerLink="/users"
+    <span class="mx-auto nav-items w-100  py-3 ps-3" (click)="toggleSubMenu()"  routerLink="/users/owners"
     routerLinkActive="active-link">
-      <i style="font-size: 27px" class="bi bi-people-fill"></i>
+      <i style="font-size: 20px" class="bi bi-people-fill me-3"></i>
       @if (!isOpen) {<b> Utilisateurs</b>}
     </span>
     <div *ngIf="showSubMenu" class="d-flex flex-column ms-4 ">
-      <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/users/owners/">
-        <i class="bi bi-person-plus-fill me-1"></i>
+      <span class="mx-auto nav-items w-100 py-2 ps-2 hb" routerLink="/users/create" >
+        <i style="font-size: 20px" class="bi bi-person-plus-fill me-3"></i>
         @if (!isOpen) {<b>add user</b>}
       </span>
-      <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/users/owners/">
-        <i class="bi bi-list"></i>
+      <span class="mx-auto nav-items w-100 py-2 ps-2 hb" routerLink="/users/owners/">
+        <i style="font-size: 20px" class="bi bi-list me-3"></i>
         @if (!isOpen) {<b> list owners</b>}
       </span>
-      <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/users/clients/">
-        <i class="bi bi-list"></i>
+      <span class="mx-auto nav-items w-100 py-2 ps-2 hb" routerLink="/users/clients/">
+        <i style="font-size: 20px" class="bi bi-list me-3"></i>
         @if (!isOpen) {<b>list clients</b>}
       </span>
     </div>
 <!-- properties -->
-    <span class="mx-auto nav-items w-100 py-3 ps-3" (click)="toggleSubMenu2()" routerLink="/properties"
+    <span class="mx-auto nav-items w-100 py-2 ps-2" (click)="toggleSubMenu2()" routerLink="/properties"
     routerLinkActive="active-link">
-      <i style="font-size: 27px" class="bi bi-house-fill"></i>
+      <i style="font-size: 20px" class="bi bi-house-fill me-3"></i>
       @if (!isOpen) {<b> Properties</b>}
     </span>
     <div *ngIf="showSubMenu2" class="d-flex flex-column ms-4">
-      <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/properties/create">
-        <i class="bi bi-house-add me-1"></i>
+      <span class="mx-auto nav-items w-100 py-2 ps-2 hb" routerLink="/properties/create">
+        <i style="font-size: 20px" class="bi bi-house-add me-3"></i>
         @if (!isOpen) {<b>add property</b>}
       </span>
-      <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/properties">
-        <i class="bi bi-list me-1"></i>
+      <span class="mx-auto nav-items w-100 py-2 ps-2 hb" routerLink="/properties">
+        <i class="bi bi-list me-3"></i>
         @if (!isOpen) {<b>list properties</b>}
       </span>
     </div>
 <!-- bookings -->
     <span class="mx-auto nav-items w-100 py-3 ps-3" (click)="toggleSubMenu3()" routerLink="/bookings"
     routerLinkActive="active-link">
-      <i style="font-size: 27px" class="bi bi-bookmark-check-fill"></i>
+      <i style="font-size: 20px" class="bi bi-bookmark-check-fill me-3"></i>
       @if (!isOpen) {<b> Bookings</b>}
     </span>
     <div *ngIf="showSubMenu3" class="d-flex flex-column ms-4">
-      <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/bookings/create">
-        <i class="bi bi-building-fill-add"></i>
+      <span class="mx-auto nav-items w-100 py-2 ps-2 hb" routerLink="/bookings/create">
+        <i style="font-size: 20px" class="bi bi-building-fill-add me-3"></i>
         @if (!isOpen) {<b> add booking</b>}
       </span>
-      <span class="mx-auto nav-items w-100 py-3 ps-3 hb" routerLink="/bookings">
-        <i class="bi bi-list"></i>
+      <span class="mx-auto nav-items w-100 py-2 ps-2 hb" routerLink="/bookings">
+        <i style="font-size: 20px" class="bi bi-list me-3" ></i>
         @if (!isOpen) {<b>list-bookings</b>}
       </span>
     </div>
@@ -83,7 +83,7 @@
     routerLinkActive="active-link"
     class="mx-auto nav-items w-100 py-3 ps-3"
   >
-  <i style="font-size: 27px" class="bi bi-person-fill"></i>
+  <i style="font-size: 20px" class="bi bi-person-fill me-3"></i>
     @if (!isOpen) {<b> Profile</b>}
   </span>
   <!-- logout -->
@@ -92,7 +92,7 @@
       routerLinkActive="active-link"
       class="mx-auto nav-items w-100 py-3 ps-3"
     >
-    <i style="font-size: 27px" class="bi bi-box-arrow-right"></i>
+    <i style="font-size: 20px" class="bi bi-box-arrow-right me-3"></i>
       @if (!isOpen) {<b> logout</b>}
     </span>
 

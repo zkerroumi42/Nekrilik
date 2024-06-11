@@ -11,6 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 const routes: Routes = [
   {
     path: '',
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'create', component: CreateUserComponent },
       { path: 'owners', component: ListOwnerComponent },
       { path: 'clients', component: ListClientsComponent },
+      { path: 'details/:id', component: UserDetailsComponent },
 
     ],
   },
@@ -41,7 +43,8 @@ const routes: Routes = [
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule,
   ]
 })
 export class UsersModule { }

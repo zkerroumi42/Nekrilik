@@ -73,11 +73,14 @@ aside {
     background-color:#007BFF;
     color: white; 
   }
-  
 
 .nav-items:hover {
     color: #fff;
     background-color: #007BFF;
+}
+.hb{
+    background-color: #494E53;
+    color: #fff;
 }
 .hb:hover{
     background: #fff;

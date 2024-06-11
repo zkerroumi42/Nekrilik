@@ -30,22 +30,26 @@ export class ListOwnerComponent implements OnInit {
 ];
 
   @ViewChild(MatSort) sort!: MatSort;
-
+  paginator: any;
   constructor() {
     this.dataSource = new MatTableDataSource(this.items);
   }
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   justify(item: any) {
     item.status = 'Justified';
-    this.dataSource.data = [...this.items]; // Refresh the dataSource to reflect changes
+    this.dataSource.data = [...this.items]; 
   }
 }

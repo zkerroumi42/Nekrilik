@@ -24,7 +24,6 @@ header {
     z-index: 1000;
     margin-right: 100px;
     margin-left: 100px;
-    box-shadow: inset 0px -6px 6px -6px rgba(0, 0, 0, 0.1);
 }
 
 header .logo img {
@@ -74,7 +73,8 @@ main .hero {
     margin-left: 100px;
     margin-right: 100px;
     padding: 40px;
-    box-shadow: inset 0px -6px 6px -6px rgba(0, 0, 0, 0.1);
+    box-shadow:inset 0 8px 10px rgba(0, 0, 0, 0.15);
+    
 
 }
 
@@ -132,7 +132,7 @@ main .hero {
     text-align: center;
     margin-right: 100px;
     margin-left: 100px;
-    box-shadow: inset 0px -6px 6px -6px rgba(0, 0, 0, 0.1);
+    box-shadow:inset 0 8px 10px rgba(0, 0, 0, 0.15);
 }
 
 .about h1 {
@@ -181,6 +181,7 @@ main .hero {
 .image-content img {
     max-width: 100%;
     height: auto;
+    width: 400px;
 }
 
 .additional-info {
@@ -222,6 +223,7 @@ main .hero {
     background-color: #fff;
     padding: 40px 0;
     box-shadow: inset 0px -6px 6px -6px rgba(0, 0, 0, 0.1);
+    box-shadow:inset 0 8px 10px rgba(0, 0, 0, 0.15);
   }
   
   .product-grid {
@@ -260,10 +262,12 @@ footer {
     background-color: #000;
     color: #f3e2ba;
     padding: 40px 20px;
-    margin-right: 100px;
-    margin-left: 100px;
+    /* margin-right: 100px;
+    margin-left: 100px; */
     padding-right: 160px;
-    padding-left: 50px;
+    padding-left: 160px;
+    margin-top: 20px;
+    box-shadow:inset 0 8px 10px rgba(0, 0, 0, 0.15);
 }
 
 .footer-content {
@@ -320,5 +324,13 @@ footer {
 .footer-bottom {
     text-align: center;
     margin-top: 60px;
+    margin-right: 220px;
+}
+a i{
+    margin-right: 18px;
+    color: #fff;
+}
+a i:hover{
+    color: #007bff;
 }
  /***** End footer *****/

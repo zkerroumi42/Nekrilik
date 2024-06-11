@@ -6,6 +6,7 @@ import { AuthResponse } from './auth-response.model';
   providedIn: 'root'
 })
 export class AuthService {
+
   private _$isLoggedin = new BehaviorSubject(false);
   $isloggedin = this._$isLoggedin.asObservable();
   private _$IsAdmin = new BehaviorSubject(false);
@@ -70,5 +71,8 @@ export class AuthService {
         console.log(error);
       })
     );
+  }
+  requestPasswordReset(email: string): Observable<any> {
+    return this.http.post<any>(`http://localhost:5163/api//password-reset`, { email });
   }
 }

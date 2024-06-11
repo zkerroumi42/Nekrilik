@@ -1,8 +1,6 @@
-<header class="my-5 pt-5"></header>
 <nav class="breadcrumb">
   <a class="breadcrumb-item" href="#">users</a>
-  <a class="breadcrumb-item" href="#">owners</a>
-  <span class="breadcrumb-item active" aria-current="page">create</span>
+  <span class="breadcrumb-item active" aria-current="page">owners</span>
 </nav>
 <div class="container mt-5 py-5">
   <mat-form-field>
@@ -40,4 +38,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

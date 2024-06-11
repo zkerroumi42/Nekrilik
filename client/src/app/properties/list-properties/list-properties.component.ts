@@ -21,6 +21,7 @@ export class ListPropertiesComponent implements OnInit {
   ];
 
   @ViewChild(MatSort) sort!: MatSort;
+  paginator: any;
 
   constructor() {
     this.dataSource = new MatTableDataSource(this.employees);
@@ -28,11 +29,15 @@ export class ListPropertiesComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
 
