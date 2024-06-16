@@ -41,5 +41,24 @@ namespace api.Controllers
 
             return Ok(reviews);
         }
+        //get reviews by property
+        [HttpGet("getAllReviewsByProperty")]
+        public async Task<IActionResult> GetReviews([FromQuery] int? PropertyId)
+        {
+            var reviews = await _reviewRepository.GetReviewsAsync();
+
+            if (reviews == null || reviews.Count == 0)
+            {
+                return NotFound("No reviews found.");
+            }
+
+            if (PropertyId.HasValue)
+            {
+                reviews = reviews.Where(r => r.PropertyId == PropertyId.Value).ToList();
+            }
+
+            return Ok(reviews);
+        }
+
     }
 }

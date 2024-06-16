@@ -15,23 +15,44 @@
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>
     </ng-container>
 
-    <!-- Date Column -->
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
-      <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
-    </ng-container>
 
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>username</th>
+      <td mat-cell *matCellDef="let element">{{ element.username}}</td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email}}</td>
+    </ng-container>
     <!-- Action Column -->
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef>Action</th>
       <td mat-cell *matCellDef="let element">
-        @if (element.status === 'NonJustifier') {
-        <button mat-raised-button color="primary" (click)="justify(element)">
-          Justify
-        </button>
-        <span class="d-none"> NonJustifier </span>} @else {
-        <i class="fas fa-check-circle text-success"></i>
-        Justified }
+        <button
+                routerLink="/users/clients/{{ element.id }}"
+                mat-raised-button
+                color="primary"
+              >
+                More Info
+              </button>
+              <button
+                (click)="updateOwner(element.id)"
+                routerLink="/users/clients/update/{{ element.id }}"
+                mat-raised-button
+                color="accent"
+                style="background-color: #FFC104;margin-right: 8px; display: inline-block;"
+              >
+                Update
+              </button>
+              <button
+                (click)="deleteOwner(element.id)"
+                mat-raised-button
+                color="warn"
+                style="display: inline-block;"
+              >
+                Delete
+              </button>
+
       </td>
     </ng-container>
 

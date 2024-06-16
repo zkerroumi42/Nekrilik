@@ -2,37 +2,35 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
+interface Client {
+  id: string;
+  nom: string;
+  prenom: string;
+  username:string;
+  email:string;
+  adress:string;
+  phone:string;
+}
 @Component({
   selector: 'app-list-clients',
   templateUrl: './list-clients.component.html',
-  styleUrl: './list-clients.component.css'
+  styleUrls: ['./list-clients.component.css'] 
 })
 export class ListClientsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'dateDebut', 'dateFin', 'duree', 'type', 'status'];
+  displayedColumns: string[] = ['id','nom', 'prenom', 'username', 'email', 'adress', 'phone', 'action'];
   dataSource: MatTableDataSource<any>;
 
-  ongs: any[] = [
-  { name: 'john doe', dateDebut: new Date('2023-01-01'), dateFin: new Date('2023-01-10'), duree: '10 days', type: 'Type A', status: 'en attente' },
-  { name: 'james bond', dateDebut: new Date('2023-02-01'), dateFin: new Date('2023-02-05'), duree: '5 days', type: 'Type B', status: 'approuver' },
-  { name: 'bdsm', dateDebut: new Date('2023-03-01'), dateFin: new Date('2023-03-15'), duree: '15 days', type: 'Type C', status: 'refuser' },
-  { name: 'jane smith', dateDebut: new Date('2023-04-01'), dateFin: new Date('2023-04-07'), duree: '7 days', type: 'Type A', status: 'en attente' },
-  { name: 'alice johnson', dateDebut: new Date('2023-05-01'), dateFin: new Date('2023-05-03'), duree: '3 days', type: 'Type B', status: 'approuver' },
-  { name: 'robert brown', dateDebut: new Date('2023-06-01'), dateFin: new Date('2023-06-10'), duree: '10 days', type: 'Type C', status: 'refuser' },
-  { name: 'emily davis', dateDebut: new Date('2023-07-01'), dateFin: new Date('2023-07-05'), duree: '5 days', type: 'Type A', status: 'en attente' },
-  { name: 'michael wilson', dateDebut: new Date('2023-08-01'), dateFin: new Date('2023-08-08'), duree: '8 days', type: 'Type B', status: 'approuver' },
-  { name: 'chris lee', dateDebut: new Date('2023-09-01'), dateFin: new Date('2023-09-10'), duree: '10 days', type: 'Type C', status: 'refuser' },
-  { name: 'patricia moore', dateDebut: new Date('2023-10-01'), dateFin: new Date('2023-10-15'), duree: '15 days', type: 'Type A', status: 'en attente' },
-  { name: 'daniel taylor', dateDebut: new Date('2023-11-01'), dateFin: new Date('2023-11-05'), duree: '5 days', type: 'Type B', status: 'approuver' },
-  { name: 'sarah anderson', dateDebut: new Date('2023-12-01'), dateFin: new Date('2023-12-10'), duree: '10 days', type: 'Type C', status: 'refuser' },
-  { name: 'mark harris', dateDebut: new Date('2024-01-01'), dateFin: new Date('2024-01-10'), duree: '10 days', type: 'Type A', status: 'en attente' },
-  { name: 'julia clark', dateDebut: new Date('2024-02-01'), dateFin: new Date('2024-02-05'), duree: '5 days', type: 'Type B', status: 'approuver' },
-  { name: 'kevin hall', dateDebut: new Date('2024-03-01'), dateFin: new Date('2024-03-15'), duree: '15 days', type: 'Type C', status: 'refuser' }
-];
+  clients: any[] = [
+    { nom: 'Doe', prenom: 'John', username: 'johndoe', email: 'john.doe@example.com', adress: '123 Main St', phone: '123-456-7890'}
+  ];
 
   @ViewChild(MatSort) sort!: MatSort;
+  router: any;
+  clientService: any;
+  UserService: any;
 
   constructor() {
-    this.dataSource = new MatTableDataSource(this.ongs);
+    this.dataSource = new MatTableDataSource(this.clients);
   }
 
   ngOnInit() {
@@ -44,13 +42,15 @@ export class ListClientsComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  approve(ong: any) {
-    ong.status = 'approuver';
-    this.dataSource.data = [...this.ongs]; // Refresh the dataSource to reflect changes
+  updateClient(id: number): void {
+    this.router.navigate(['/users/clients/update', id]);
   }
 
-  reject(ong: any) {
-    ong.status = 'refuser';
-    this.dataSource.data = [...this.ongs]; // Refresh the dataSource to reflect changes
+  deleteClient(id: string): void {
+    this.UserService.deleteClient(id).subscribe(() => {
+      this.UserService.getClients().subscribe((clients: Client[]) => {
+        this.dataSource.data = clients;
+      });
+    });
   }
 }

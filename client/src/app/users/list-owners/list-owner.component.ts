@@ -2,35 +2,40 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
+interface Owner {
+  id: string;
+  nom: string;
+  prenom: string;
+  username:string;
+  email:string;
+  adress:string;
+  phone:string;
+}
 @Component({
   selector: 'app-list-owner',
   templateUrl: './list-owner.component.html',
   styleUrl: './list-owner.component.css'
 })
 export class ListOwnerComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'date', 'action'];
+  displayedColumns: string[] = ['name', 'username',"email", 'action'];
   dataSource: MatTableDataSource<any>;
 
   items: any[] = [
-    { name: 'Item 1', date: new Date('2023-01-01'), status: 'NonJustifier' },
-    { name: 'Item 2', date: new Date('2023-02-01'), status: 'Justified' },
-    { name: 'Item 3', date: new Date('2023-03-01'), status: 'Pending' },
-    { name: 'Item 4', date: new Date('2023-04-01'), status: 'NonJustifier' },
-    { name: 'Item 5', date: new Date('2023-05-01'), status: 'Justified' },
-    { name: 'Item 6', date: new Date('2023-06-01'), status: 'Pending' },
-    { name: 'Item 7', date: new Date('2023-07-01'), status: 'NonJustifier' },
-    { name: 'Item 8', date: new Date('2023-08-01'), status: 'Justified' },
-    { name: 'Item 9', date: new Date('2023-09-01'), status: 'Pending' },
-    { name: 'Item 10', date: new Date('2023-10-01'), status: 'NonJustifier' },
-    { name: 'Item 11', date: new Date('2023-11-01'), status: 'Justified' },
-    { name: 'Item 12', date: new Date('2023-12-01'), status: 'Pending' },
-    { name: 'Item 13', date: new Date('2024-01-01'), status: 'NonJustifier' },
-    { name: 'Item 14', date: new Date('2024-02-01'), status: 'Justified' },
-    { name: 'Item 15', date: new Date('2024-03-01'), status: 'Pending' }
+    { name: 'zakaria Filali', username: "zakaria1", email: 'zakaria1@gmail.com' },
+    { name: 'Zakaria Ourassam', username: "zakaria2", email: 'zakaria2@gmail.com' },
+    { name: 'zakaria Filali', username: "zakaria1", email: 'zakaria1@gmail.com' },
+    { name: 'Zakaria Ourassam', username: "zakaria2", email: 'zakaria2@gmail.com' },
+    { name: 'zakaria Filali', username: "zakaria1", email: 'zakaria1@gmail.com' },
+    { name: 'Zakaria Ourassam', username: "zakaria2", email: 'zakaria2@gmail.com' },
+    { name: 'zakaria Filali', username: "zakaria1", email: 'zakaria1@gmail.com' },
+    { name: 'Zakaria Ourassam', username: "zakaria2", email: 'zakaria2@gmail.com' },
+    
 ];
 
   @ViewChild(MatSort) sort!: MatSort;
   paginator: any;
+  router: any;
+  UserService: any;
   constructor() {
     this.dataSource = new MatTableDataSource(this.items);
   }
@@ -48,8 +53,15 @@ export class ListOwnerComponent implements OnInit {
     }
   }
 
-  justify(item: any) {
-    item.status = 'Justified';
-    this.dataSource.data = [...this.items]; 
+  updateOwner(id: number): void {
+    this.router.navigate(['/users/clients/update', id]);
+  }
+
+  deleteOwner(id: string): void {
+    this.UserService.deleteClient(id).subscribe(() => {
+      this.UserService.getClients().subscribe((owners: Owner[]) => {
+        this.dataSource.data = owners;
+      });
+    });
   }
 }

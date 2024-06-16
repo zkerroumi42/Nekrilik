@@ -20,7 +20,7 @@ export class RegisterComponent {
     this.authService.registeruser(this.username, this.email, this.password).subscribe(
       response => {
         console.log('Successfully registered admin');
-        window.location.href = '/';
+        window.location.href = '/auth/login';
       },
       error => {
         console.log(error.error)

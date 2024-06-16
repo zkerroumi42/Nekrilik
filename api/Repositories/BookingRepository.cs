@@ -78,5 +78,10 @@ namespace api.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+
+    public async Task<int> GetBookingsCountAsync()
+    {
+        return await _context.Bookings.CountAsync();
+    }
     }
 }

@@ -12,7 +12,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
@@ -23,7 +22,6 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
-import { ReviewsComponent } from './reviews/reviews.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
@@ -37,7 +35,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FooterComponent,
     HeaderComponent,
     StatistiquesComponent,
-    ReviewsComponent,
     ProfileComponent,
     
     

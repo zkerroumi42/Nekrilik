@@ -1,0 +1,57 @@
+.review {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .review-list{
+    margin: 30px;
+  }
+  h2{
+    margin: 20px;
+  }
+  .user-info {
+    margin-bottom: 10px;
+  }
+  
+  .reviewer-name {
+    font-weight: bold;
+  }
+  
+  .reviewer-location {
+    color: #999;
+  }
+  
+  .mat-star-rating {
+    margin-bottom: 15px;
+  }
+  
+  .review-text {
+    line-height: 1.5;
+  }
+  
+  .owner-response {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+  }
+  
+  .owner-response h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .like-button {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .like-button button {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .like-button span.like-count {
+    margin-left: 10px;
+  }

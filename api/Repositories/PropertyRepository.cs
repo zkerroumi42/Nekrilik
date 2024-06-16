@@ -7,6 +7,7 @@ using api.Model;
 using api.Dtos;
 using Microsoft.EntityFrameworkCore;
 using api.Data;
+using api.Enums;
 
 namespace api.Repositories
 {
@@ -99,5 +100,37 @@ namespace api.Repositories
 
             return true;
         }
+
+    public async Task<int> GetPropertiesCountAsync()
+    {
+        return await _context.Properties.CountAsync();
+    }
+
+         public async Task<List<Property>> SearchByTypeAsync(PropertyType propertyType)
+        {
+            var properties = await _context.Properties
+                .Where(p => p.PropertyType== propertyType)
+                .ToListAsync();
+
+            return properties;
+        }
+         public async Task<List<Property>> SearchByRentalTypeAsync(RentalType rentalType)
+        {
+            var properties = await _context.Properties
+                .Where(p => p.RentalType== rentalType)
+                .ToListAsync();
+
+            return properties;
+        }
+
+         public async Task<List<Property>> SearchByPropertyStatuseAsync(PropertyStatus status)
+        {
+            var properties = await _context.Properties
+                .Where(p => p.PropertyStatus== status)
+                .ToListAsync();
+
+            return properties;
+        }
+
     }
 }

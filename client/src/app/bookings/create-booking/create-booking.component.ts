@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class CreateBookingComponent {
   bookingStatuses: string[] = ['Pending', 'Confirmed', 'Cancelled'];
-
   constructor() {
     };
   

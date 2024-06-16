@@ -14,6 +14,8 @@ namespace api.interfaces
         Task<Booking> GetBookingByIdAsync(int id);
         Task<Booking> UpdateBookingAsync(CreateBookingDto updateBookingDto, int id);
         Task<bool> DeleteBookingAsync(int id);
+
+        Task<int> GetBookingsCountAsync();
         
     }
 }

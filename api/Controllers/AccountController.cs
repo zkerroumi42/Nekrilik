@@ -162,18 +162,5 @@ namespace api.Controller
             }
 
         }
-        //  [HttpGet("all-clients")]
-        // public async Task<IActionResult> GetAllClients()
-        // {
-        //     var clients = await _accountRepository.GetAllClientsAsync();
-        //     return Ok(clients);
-        // }
-
-        // [HttpGet("all-owners")]
-        // public async Task<IActionResult> GetAllOwners()
-        // {
-        //     var owners = await _accountRepository.GetAllOwnersAsync();
-        //     return Ok(owners);
-        // }
     }
 }

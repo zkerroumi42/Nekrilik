@@ -1,52 +1,84 @@
 <nav class="breadcrumb">
-  <a class="breadcrumb-item" href="#">properties</a>
-  <span class="breadcrumb-item active" aria-current="page">list</span>
+  <a class="breadcrumb-item" href="#">Properties</a>
+  <span class="breadcrumb-item active" aria-current="page">List</span>
 </nav>
+
 <div class="container mt-4">
   <mat-form-field>
     <mat-label>Search</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. name" />
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Name" />
   </mat-form-field>
-
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+      <td mat-cell *matCellDef="let element">{{ element.title }}</td>
     </ng-container>
-
-    <!-- Email Column -->
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
     </ng-container>
-
-    <!-- Phone Column -->
-    <ng-container matColumnDef="phone">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
-      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+      <td mat-cell *matCellDef="let element">{{ element.address }}</td>
     </ng-container>
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="poste">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Position</th>
-      <td mat-cell *matCellDef="let element">{{ element.poste }}</td>
+    <ng-container matColumnDef="photo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Photo</th>
+      <td mat-cell *matCellDef="let element">{{ element.photo }}</td>
     </ng-container>
-
-    <!-- Action Column -->
+    <ng-container matColumnDef="zipCode">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Zip Code</th>
+      <td mat-cell *matCellDef="let element">{{ element.zipCode }}</td>
+    </ng-container>
+    <ng-container matColumnDef="propertyType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Property Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.propertyType }}</td>
+    </ng-container>
+    <ng-container matColumnDef="rentalType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Rental Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.rentalType }}</td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+      <td mat-cell *matCellDef="let element">{{ element.price }}</td>
+    </ng-container>
+    <ng-container matColumnDef="propertyStatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Property Status</th>
+      <td mat-cell *matCellDef="let element">{{ element.propertyStatus }}</td>
+    </ng-container>
+    <ng-container matColumnDef="maxGuests">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Max Guests</th>
+      <td mat-cell *matCellDef="let element">{{ element.maxGuests }}</td>
+    </ng-container>
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
       <td mat-cell *matCellDef="let element">
         <button
           routerLink="/properties/{{ element.id }}"
           mat-raised-button
           color="primary"
+          style="margin-right: 8px; display: inline-block;"
         >
           More Info
         </button>
+        <button
+          (click)="updateProperty(element.id)"
+          routerLink="/properties/update/{{ element.id }}"
+          mat-raised-button
+          color="accent"
+          style="background-color: #FFC104;margin-right: 8px; display: inline-block;"
+        >
+          Update
+        </button>
+        <button
+          (click)="deleteProperty(element.id)"
+          mat-raised-button
+          color="warn"
+          style="display: inline-block;"
+        >
+          Delete
+        </button>
       </td>
     </ng-container>
-
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>

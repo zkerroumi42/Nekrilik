@@ -1,72 +1,72 @@
-<nav class="breadcrumb">
-  <a class="breadcrumb-item" href="#">users</a>
-  <span class="breadcrumb-item active" aria-current="page">clients</span>
-</nav>
-<div class="container mt-4">
-  <mat-form-field>
-    <mat-label>Search</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Id" />
-  </mat-form-field>
-
-  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-    <!-- ID Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-    </ng-container>
-
-    <!-- DateDebut Column -->
-    <ng-container matColumnDef="dateDebut">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Debut</th>
-      <td mat-cell *matCellDef="let element">{{ element.dateDebut | date }}</td>
-    </ng-container>
-
-    <!-- Datefin Column -->
-    <ng-container matColumnDef="dateFin">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Fin</th>
-      <td mat-cell *matCellDef="let element">{{ element.dateFin | date }}</td>
-    </ng-container>
-
-    <!-- Duree Column -->
-    <ng-container matColumnDef="duree">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Durée</th>
-      <td mat-cell *matCellDef="let element">{{ element.duree }}</td>
-    </ng-container>
-
-    <!-- Type Column -->
-    <ng-container matColumnDef="type">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
-      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
-    </ng-container>
-
-    <!-- Status Column -->
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef>Status</th>
-      <td mat-cell *matCellDef="let element">
-        <ng-container [ngSwitch]="element.status">
-          <div *ngSwitchCase="'en attente'">
-            <button
-              mat-raised-button
-              color="primary"
-              (click)="approve(element)"
-            >
-              Accepter
-            </button>
-            <button mat-raised-button color="warn" (click)="reject(element)">
-              Refuser
-            </button>
-          </div>
-          <div *ngSwitchCase="'approuver'" class="status-icon">
-            <mat-icon color="primary">check_circle</mat-icon> Accepté
-          </div>
-          <div *ngSwitchCase="'refuser'" class="status-icon">
-            <mat-icon color="warn">cancel</mat-icon> Refusé
-          </div>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-table">
+        <!-- Nom Column -->
+        <ng-container matColumnDef="nom">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
+          <td mat-cell *matCellDef="let client"> {{client.nom}} </td>
         </ng-container>
-      </td>
-    </ng-container>
+        <!-- Prénom Column -->
+        <ng-container matColumnDef="prenom">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Prénom </th>
+          <td mat-cell *matCellDef="let client"> {{client.prenom}} </td>
+        </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
-</div>
+        <!-- Username Column -->
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
+          <td mat-cell *matCellDef="let client"> {{client.username}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let client"> {{client.email}} </td>
+        </ng-container>
+
+        <!-- Address Column -->
+        <ng-container matColumnDef="adress">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+          <td mat-cell *matCellDef="let client"> {{client.adress}} </td>
+        </ng-container>
+
+        <!-- Phone Column -->
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+          <td mat-cell *matCellDef="let client"> {{client.phone}} </td>
+        </ng-container>
+      
+          <!-- Action Column -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                routerLink="/users/clients/{{ element.id }}"
+                mat-raised-button
+                color="primary"
+              >
+                More Info
+              </button>
+              <button
+                (click)="updateClient(element.id)"
+                routerLink="/users/clients/update/{{ element.id }}"
+                mat-raised-button
+                color="accent"
+                style="background-color: #FFC104;margin-right: 8px; display: inline-block;"
+              >
+                Update
+              </button>
+              <button
+                (click)="deleteClient(element.id)"
+                mat-raised-button
+                color="warn"
+                style="display: inline-block;"
+              >
+                Delete
+              </button>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      

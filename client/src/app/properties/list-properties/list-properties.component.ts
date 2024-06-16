@@ -12,19 +12,61 @@ import 'datatables.net-bs4';
   styleUrl: './list-properties.component.css'
 })
 export class ListPropertiesComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'email', 'phone', 'poste', 'action'];
+  displayedColumns: string[] = ['title', 'description', 'address', 'photo', 'zipCode', 'propertyType', 'rentalType', 'price', 'propertyStatus', 'maxGuests', 'action'];
   dataSource: MatTableDataSource<any>;
 
-  employees: any[] = [
-    { name: 'John Doe', email: 'john.doe@example.com', phone: '123-456-7890', poste: 'Manager',id:'1' },
-    { name: 'Jane Smith', email: 'jane.smith@example.com', phone: '098-765-4321', poste: 'Developer',id:'2' },
+  properties: any[] = [
+    { 
+      id: 1, 
+      title: 'Luxurious Beachfront Villa', 
+      description: 'Beautiful villa located right on the beach', 
+      address: '123 Beachfront Drive', 
+      photo: 'villa.jpg', 
+      zipCode: '12345', 
+      propertyType: 'Villa', 
+      rentalType: 'Short Term', 
+      price: '$500 per night', 
+      propertyStatus: 'Available', 
+      maxGuests: 8 
+    },
+    { 
+      id: 1, 
+      title: 'Luxurious Beachfront Villa', 
+      description: 'Beautiful villa located right on the beach', 
+      address: '123 Beachfront Drive', 
+      photo: 'villa.jpg', 
+      zipCode: '12345', 
+      propertyType: 'Villa', 
+      rentalType: 'Short Term', 
+      price: '$500 per night', 
+      propertyStatus: 'Available', 
+      maxGuests: 8 
+    },
+    { 
+      id: 1, 
+      title: 'Luxurious Beachfront Villa', 
+      description: 'Beautiful villa located right on the beach', 
+      address: '123 Beachfront Drive', 
+      photo: 'villa.jpg', 
+      zipCode: '12345', 
+      propertyType: 'Villa', 
+      rentalType: 'Short Term', 
+      price: '$500 per night', 
+      propertyStatus: 'Available', 
+      maxGuests: 8 
+    },
+    
+
   ];
+  
 
   @ViewChild(MatSort) sort!: MatSort;
   paginator: any;
+  propertyService: any;
+  router: any;
 
   constructor() {
-    this.dataSource = new MatTableDataSource(this.employees);
+    this.dataSource = new MatTableDataSource(this.properties);
   }
 
   ngOnInit() {
@@ -38,6 +80,18 @@ export class ListPropertiesComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  updateProperty(id: number): void {
+    this.router.navigate(['/properties/update', id]);
+  }
+
+  deleteProperty(id: number): void {
+    this.propertyService.deleteProperty(id).subscribe(() => {
+      this.propertyService.getProperties().subscribe((properties:any[]) => {
+        this.dataSource.data = properties;
+      });
+    });
   }
 
 

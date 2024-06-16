@@ -14,8 +14,6 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-// var smtpSettings = builder.Configuration.GetSection("SmtpSettings").Get<SmtpSettings>();
-// Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddNewtonsoftJson(
     options =>
@@ -78,10 +76,10 @@ builder.Services.AddAuthentication(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuer = true, //issuer url same as jwt token creation url
-        ValidIssuer = builder.Configuration["JWT:Issuer"], //audience
+        ValidateIssuer = true, 
+        ValidIssuer = builder.Configuration["JWT:Issuer"],
         ValidateAudience = true,
-        ValidAudience = builder.Configuration["JWT:Audience"],//issuer url same as jwt token creation url
+        ValidAudience = builder.Configuration["JWT:Audience"],
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(
                 System.Text.Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigninKey"]))
@@ -113,7 +111,6 @@ else
 {
     Console.WriteLine("Invalid arguments or missing command.");
 }
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

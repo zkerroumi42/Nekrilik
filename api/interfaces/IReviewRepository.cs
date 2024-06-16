@@ -8,5 +8,7 @@ namespace api.Interfaces
     {
         Task<Review> CreateReviewAsync(CreateReviewDto createReviewDto);
         Task<List<Review>> GetReviewsAsync();
+
+        Task<int> GetReviewsCountAsync();
     }
 }

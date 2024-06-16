@@ -5,9 +5,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-property.component.css']
 })
 export class CreatePropertyComponent implements OnInit {
-  propertyTypes: string[] = ['House', 'Apartment', 'Condo', 'Townhouse', 'Villa'];
-  rentalTypes: string[] = ['Long Term', 'Short Term', 'Vacation Rental'];
-  propertyStatuses: string[] = ['Active', 'Inactive', 'Sold'];
+  propertyTypes: string[] = ['House', 'Room',];
+  rentalTypes: string[] = ['Day', 'Month'];
+  propertyStatuses: string[] = ['Available', 'Rented', 'UnderMaintenance','Unavailable'];
+
 
   constructor() {
     };

@@ -37,5 +37,22 @@ namespace api.Repositories
         {
             return await _context.Reviews.ToListAsync();
         }
+
+        public async Task<List<Review>> GetReviewsAsync(int? PropertyId = null)
+{
+    // Assuming you are using Entity Framework or similar ORM
+    var query = _context.Reviews.AsQueryable();
+
+    if (PropertyId.HasValue)
+    {
+        query = query.Where(r => r.PropertyId == PropertyId.Value);
+    }
+
+    return await query.ToListAsync();
+}
+        public async Task<int> GetReviewsCountAsync()
+         {
+        return await _context.Reviews.CountAsync();
+         }
     }
 }

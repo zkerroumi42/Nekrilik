@@ -1,6 +1,23 @@
 <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="#">users</a>
-    <a class="breadcrumb-item" href="#">owners</a>
-    <span class="breadcrumb-item active" aria-current="page">create</span>
+    <a class="breadcrumb-item" href="#">properties</a>
+    <span class="breadcrumb-item active" aria-current="page">details</span>
 </nav>
-<p>details property</p>
+<div class="container">
+    <div class="property-details">
+      <h2>{{ property.title }}</h2>
+      <div class="property-image">
+        <img [src]="property.photo" alt="Property Image">
+      </div>
+      <div class="property-info">
+        <p><strong>Description:</strong> {{ property.description }}</p>
+        <p><strong>Address:</strong> {{ property.address }}</p>
+        <p><strong>Zip Code:</strong> {{ property.zipCode }}</p>
+        <p><strong>Property Type:</strong> {{ property.propertyType }}</p>
+        <p><strong>Rental Type:</strong> {{ property.rentalType }}</p>
+        <p><strong>Price:</strong> {{ property.price }}</p>
+        <p><strong>Property Status:</strong> {{ property.propertyStatus }}</p>
+        <p><strong>Max Guests:</strong> {{ property.maxGuests }}</p>
+      </div>
+    </div>
+  </div>  
+<app-reviews></app-reviews>
